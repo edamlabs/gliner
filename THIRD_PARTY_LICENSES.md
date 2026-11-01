@@ -653,7 +653,7 @@ Used by:
 Used by:
 
 - [linux-raw-sys 0.12.1](https://github.com/sunfishcode/linux-raw-sys)
-- [rustix 1.1.5](https://github.com/bytecodealliance/rustix)
+- [rustix 1.1.6](https://github.com/bytecodealliance/rustix)
 
 ```text
 
@@ -2829,7 +2829,7 @@ Used by:
 - [itertools 0.14.0](https://github.com/rust-itertools/itertools)
 - [lazy_static 1.5.1](https://github.com/rust-lang-nursery/lazy-static.rs)
 - [linux-raw-sys 0.12.1](https://github.com/sunfishcode/linux-raw-sys)
-- [log 0.4.34](https://github.com/rust-lang/log)
+- [log 0.4.35](https://github.com/rust-lang/log)
 - [matrixmultiply 0.3.11](https://github.com/bluss/matrixmultiply/)
 - [mime 0.3.17](https://github.com/hyperium/mime)
 - [ndarray 0.17.2](https://github.com/rust-ndarray/ndarray)
@@ -2845,9 +2845,9 @@ Used by:
 - [regex-automata 0.4.18](https://github.com/rust-lang/regex)
 - [regex-syntax 0.8.11](https://github.com/rust-lang/regex)
 - [regex 1.13.1](https://github.com/rust-lang/regex)
-- [rustix 1.1.5](https://github.com/bytecodealliance/rustix)
+- [rustix 1.1.6](https://github.com/bytecodealliance/rustix)
 - [signal-hook-registry 1.4.8](https://github.com/vorner/signal-hook)
-- [smallvec 1.16.3](https://github.com/servo/rust-smallvec)
+- [smallvec 1.16.4](https://github.com/servo/rust-smallvec)
 - [socket2 0.6.5](https://github.com/rust-lang/socket2)
 - [symlink 0.1.0](https://gitlab.com/chris-morgan/symlink)
 - [tempfile 3.27.0](https://github.com/Stebalien/tempfile)
