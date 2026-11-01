@@ -1,10 +1,10 @@
-# syntax=docker/dockerfile:1.7
+# syntax=docker/dockerfile:1.28@sha256:bb22d9815c728170f72750f4e5b0d672e06176142e1d602c7e66c050100b7e5b
 # The gliner service (:5800). Build context is the repository root: `make image`.
 # No model inside and nothing downloaded at run time: mount an artifact dir (`make export`) read-only at /models.
 
 ##### BASES #####
 ARG CHEF=lukemathwalker/cargo-chef:latest-rust-1.99-slim-trixie@sha256:f122e3c240d1c05668b07179cf6fa07647db2a79a110f4bb8a91d75f90d5b8e4
-ARG RUNTIME=gcr.io/distroless/cc-debian13:nonroot@sha256:b7e81cb1af38d9345680e68bcf564d388f96304e25222030fc8c051faf8565b3
+ARG RUNTIME=gcr.io/distroless/cc-debian13:nonroot@sha256:08476c244888bfb425bae1ae4dd7c17f093e972aab8426883d97f3c6f280f7c1
 
 ##### TOOLCHAIN #####
 # g++ brings libstdc++ for the statically linked ONNX Runtime.
