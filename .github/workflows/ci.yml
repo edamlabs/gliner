@@ -20,7 +20,7 @@ concurrency:
 jobs:
   hooks:
     name: hooks (fmt, clippy, bounds, tests, licenses, ruff, zizmor, gitleaks) + coverage
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
@@ -51,7 +51,7 @@ jobs:
   upstream-context:
     name: what the update changed
     if: github.event_name == 'pull_request' && startsWith(github.head_ref, 'renovate/')
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
@@ -80,7 +80,7 @@ jobs:
 
   image:
     name: runtime image
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
@@ -98,7 +98,7 @@ jobs:
   train-image:
     name: train image
     if: vars.TRAIN_IMAGE == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     permissions:
       contents: read
     steps:
