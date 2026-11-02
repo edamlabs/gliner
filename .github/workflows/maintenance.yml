@@ -109,7 +109,7 @@ jobs:
           openai_api_key: ${{ secrets.SM_API_KEY }}
           openai_base_url: ${{ vars.SM_BASE_URL }}
           openai_model: ${{ vars.SM_MODEL }}
-          qwen_cli_version: ${{ vars.QWEN_CLI_VERSION || '0.26.1' }}
+          qwen_cli_version: ${{ vars.QWEN_CLI_VERSION || '0.26.5' }}
           prompt: |
             Follow QWEN.md strictly.
             Mode: ${{ steps.gate.outputs.mode }}
