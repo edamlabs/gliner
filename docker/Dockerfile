@@ -37,5 +37,7 @@ ENV GLINER_MODEL__DIR=/models \
     GLINER_SERVER__LOG__FORMAT=json
 USER nonroot
 EXPOSE 5800
+# No shell, no curl: the binary probes its own `/ready` (healthy once the model is loaded).
+HEALTHCHECK --interval=30s --timeout=5s --start-period=120s --retries=3 CMD ["/usr/local/bin/gliner", "probe"]
 ENTRYPOINT ["/usr/local/bin/gliner"]
 CMD ["serve"]

@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 ## [Unreleased]
 
+## [0.1.3] — 2026-11-03
+
+### Added
+
+- `gliner probe`: exit 0 once the running server answers `GET /ready`, 1 otherwise — the image's `HEALTHCHECK`, since distroless has no shell or curl; a wildcard bind is probed on loopback.
+
 ### Changed
 
 - README: badge layout, description and identity line standardized on the EDamLabs template.
