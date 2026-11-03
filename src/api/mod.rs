@@ -5,6 +5,7 @@ pub mod eval;
 pub mod health;
 pub mod models;
 pub mod ner;
+pub mod probe;
 pub mod promote;
 pub mod server;
 pub mod state;

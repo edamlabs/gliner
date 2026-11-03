@@ -3,6 +3,7 @@
 use std::path::Path;
 use std::time::Duration;
 
+use gliner::api::probe::{HttpProbe, ProbeError};
 use gliner::api::server::{HttpServer, ServerError};
 use gliner::core::settings::Settings;
 use gliner::runtime::onnx::OnnxError;
@@ -118,4 +119,25 @@ async fn test_serve_fails_when_the_model_cannot_load() {
         HttpServer::serve(&settings).await,
         Err(ServerError::Artifact(_))
     ));
+}
+
+#[tokio::test(flavor = "multi_thread", worker_threads = 2)]
+async fn test_probe_fails_until_ready_then_passes_on_a_wildcard_bind() {
+    let registry = registry();
+    let mut settings = settings(registry.path(), 2).await;
+    assert!(matches!(
+        HttpProbe::ready(&settings.server).await,
+        Err(ProbeError::Io(..))
+    ));
+    settings.server.host = [0, 0, 0, 0].into();
+    let server_settings = settings.clone();
+    let server = tokio::spawn(async move { HttpServer::serve(&server_settings).await });
+    let ready = async {
+        while HttpProbe::ready(&settings.server).await.is_err() {
+            tokio::time::sleep(Duration::from_millis(20)).await;
+        }
+    };
+    tokio::time::timeout(Duration::from_secs(10), ready).await.unwrap();
+    assert_eq!(http(settings.server.port, "GET", "/ready", "").await.unwrap().0, 200);
+    server.abort();
 }
