@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Fine-tune a GLiNER bi-encoder checkpoint on an NDJSON dataset, for the service's train role"
 requires-python = ">=3.13"
 dependencies = [
-    "gliner[training]==0.2.29",
+    "gliner[training]==0.2.30",
     "torch>=2.9",
     "transformers>=5.16.1",
 ]
