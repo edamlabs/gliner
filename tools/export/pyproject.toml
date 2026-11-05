@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Export a GLiNER bi-encoder checkpoint to the ONNX artifact the Rust service serves"
 requires-python = ">=3.13"
 dependencies = [
-    "gliner==0.2.29",
+    "gliner==0.2.30",
     "onnx>=1.19",
     "onnxruntime>=1.23",
     "torch>=2.9",
